@@ -46,7 +46,7 @@
   )
   place(center + top,
       dy: 46.8%,
-      rect(align(center + horizon, text(naslov, size: 11pt)) , fill: clr, width: 90%, height: 4.3%)
+      rect(align(center + horizon, text(naslov, size: 12pt)) , fill: clr, width: 90%, height: 4.3%)
   )
   place(center + top,
       dy: 57%,

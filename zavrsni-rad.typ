@@ -2,23 +2,24 @@
 // Такође, видите metadata.typ
 
 #import "metadata.typ": *
-#set page(paper: format_strane, margin: (y: 2.5cm, inside: 2cm, outside: 1.5cm))
 #include "naslovna.typ"
+#set page(
+  paper: format_strane, 
+  margin: (top: 2cm, bottom: 2cm, left: 2cm, right: 2cm) // Ovde stavi 1.5cm ili 2cm da KDI tabela stane!
+)
 #pagebreak()
 #pagebreak()
 #include "zadatak.typ"
 #pagebreak()
-#pagebreak()
-#include "kljucna.typ"
-#pagebreak()
 #include "sukob-interesa.typ"
+#set page(paper: format_strane, margin: (top: 2.5cm, bottom: 2.5cm, inside: 3cm, outside: 2.5cm))
 
 #set text(lang: "sr")
 
 #set document(title: naslov, author: autor)
 #set heading(numbering: "1.1")
 #set text(font: "Liberation Serif", size: 11pt)
-#set par(justify: true)
+#set par(justify: true, leading: 0.95em, spacing: 1.6em)
 #show link: set text(blue)
 #show cite: set text(blue)
 #show ref: set text(blue)
@@ -29,12 +30,20 @@
 ): set figure.caption(position: top)
 #show figure.where(kind: raw): set figure(supplement: [Листинг])
 #set ref(supplement: none)
+// Нумерација слика/табела/листинга по поглављу (Слика 2.1, Табела 2.1)
+#set figure(numbering: n => context {
+  numbering("1.1", counter(heading).get().first(), n)
+})
 
 
 #import "@preview/hydra:0.6.2": hydra
 
 #show heading.where(level: 1): (it) => {
-    pagebreak(to: "odd", weak: true)
+    // Ресетовање бројача слика/табела/листинга за свако ново поглавље
+    counter(figure.where(kind: image)).update(0)
+    counter(figure.where(kind: table)).update(0)
+    counter(figure.where(kind: raw)).update(0)
+    pagebreak(weak: true)
     set block(spacing: 8pt)
     if heading.numbering != none {
         text("Глава " + counter(heading).display(), size: 22pt)
@@ -51,50 +60,29 @@
 #set page(header: context {
      // Хедери са текућим секцијама не иду на страницу са поглављима
      if not (query(heading.where(level: 1)).any(h => h.location().page() == here().page())) {
-        if calc.odd(here().page()) {
-            align(right, emph(hydra(1)))
-        } else {
-            align(left, emph(hydra(2)))
-        }
+        align(right, emph(hydra(1)))
         line(length: 100%)
      }
 })
 
-#pagebreak(to: "odd", weak: false)
+#pagebreak(weak: false)
 #set heading(numbering: "1.1")
 #set page(numbering: "1")
 #counter(page).update(1)
 
 
-// TODO: Овде укључујете поглавља
 #include "poglavlja/1-uvod.typ"
-#include "poglavlja/2-stanje.typ"
+#include "poglavlja/2-teorijske-osnove.typ"
+#include "poglavlja/3-pregled-literature.typ"
+#include "poglavlja/4-dizajn-eksperimenta.typ"
+#include "poglavlja/5-realizacija.typ"
+#include "poglavlja/6-rezultati-i-diskusija.typ"
 #include "poglavlja/7-zakljucak.typ"
 
 
 
 #set heading(numbering: none)
 #show outline: set heading(outlined: true)
-#context {
-    if query(figure.where(kind: image)).len() > 0  [
-        = Списак слика
-        <spisak-slika>
-        #outline(title: none, target: figure.where(kind: image))
-    ]
-
-    if query(figure.where(kind: image)).len() > 0  [
-        = Списак листинга
-        <spisak-listinga>
-        #outline(title: none, target: figure.where(kind: raw))
-    ]
-
-    if query(figure.where(kind: table)).len() > 0  [
-        = Списак табела
-        <spisak-tabela>
-        #outline(title: none, target: figure.where(kind: table))
-    ]
-}
-
 
 
 #show figure: it => {
@@ -108,15 +96,19 @@
     it
 }
 
-// TODO: Додаци - искоментарисати ако се не користе
+// Додаци
 #include "poglavlja/dodatak 1 - skracenice.typ"
-#include "poglavlja/dodatak 2 - pojmovi.typ"
+
+#show "Available at:": "Доступно на "
+#bibliography(title: [Литература], "literatura.bib", style: "ieee.csl")
+#checkbib()
 
 #include "biografija.typ"
 
-#show "Available at:": "Доступно на "
-#bibliography(title: [Литература], "literatura.bib")
-#checkbib()
+#metadata("kdi-start") <kdi-start>
+#set page(numbering: none, margin: (top: 2cm, bottom: 2cm, left: 2cm, right: 2cm))
+#pagebreak()
+#include "kljucna.typ"
 
 // Потребне исправке и дораде. У тексту користити са
 // #todo[Коментар шта треба урадити]

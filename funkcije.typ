@@ -3,7 +3,12 @@
 #let physical() = context {
     let chapters = query(heading.where(level: 1, outlined: true))
         .filter(it => not it.numbering == none).len()
-    let pages = counter(page).final().first()
+    let kdi = query(<kdi-start>)
+    let pages = if kdi.len() > 0 {
+        counter(page).at(kdi.first().location()).first()
+    } else {
+        counter(page).final().first()
+    }
 
     let bibtex_string = read("literatura.bib")
     let bib = load-bibliography(bibtex_string)

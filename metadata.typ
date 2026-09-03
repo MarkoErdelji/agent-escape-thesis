@@ -1,15 +1,15 @@
-#let format_strane = "iso-b5"         // могуће вредности: iso-b5, a4
-#let naslov = "Шаблон и упутство за писање завршних радова"
-#let autor = "Уписати име и презиме"
+#let format_strane = "a4"         // могуће вредности: iso-b5, a4
+#let naslov = "Аутономна експлоатација рањивости контејнерске изолације применом LLM агената"
+#let autor = "Марко Ердељи"
 
 // На енглеском
-#let naslov_eng = "Template and tutorial for thesis preparation"
-#let autor_eng = "Upisati ime i prezime na latinici"
+#let naslov_eng = "Autonomous Exploitation of Container Isolation Vulnerabilities Using LLM Agents"
+#let autor_eng = "Marko Erdelji"
 
-#let indeks = "Уписати индекс"
+#let indeks = "R2 4/2024" // TODO: уписати индекс
 
 // Име и презиме ментора
-#let mentor = "Игор Дејановић"
+#let mentor = "Горан Сладић"
 // Звање: редовни професор, ванредни професор, доцент
 #let mentor_zvanje = "редовни професор"
 
@@ -21,18 +21,15 @@
 
 #let godina = [#datetime.today().year()]
 
-#let kljucne_reci = "Шаблон, завршни рад, упутство"
+#let kljucne_reci = "LLM агенти, контејнерска безбедност, експлоатација рањивости, аутономни агенти, Docker"
 #let apstrakt = [
-     Овај документ представља упутство за писање завршних радова на Факултету
-     техничких наука Универзитета у Новом Саду. У исто време је и шаблон за Typst.
+     У овом раду испитана је способност аутономних агената заснованих на великим језичким моделима да аутономно наруше изолацију контејнера и издвоје тајни податак из меморије процеса жртве. Развијен је евалуациони оквир са три лабораторијска сценарија растуће сложености, а евалуација је спроведена на моделима различитих нивоа способности. Резултати показују да савремени агенти представљају практично оствариву претњу контејнерској изолацији.
 ]
 
 // На енглеском
-#let kljucne_reci_eng = "Template, thesis, tutorial"
+#let kljucne_reci_eng = "LLM agents, container security, vulnerability exploitation, autonomous agents, Docker"
 #let apstrakt_eng = [
-     This document provides guidelines for writing final theses at the Faculty
-     of Technical Sciences, University of Novi Sad. At the same time, it serves
-     as a Typst template.
+     This thesis examines the ability of autonomous agents based on large language models to autonomously escape container isolation and extract a secret from the memory of a victim process. An evaluation framework with three laboratory scenarios of increasing complexity was developed, and the evaluation was conducted on models of varying capability levels. The results show that contemporary agents pose a practically viable threat to container isolation.
 ]
 
 // TODO: Текст задатка добијате од ментора. Заменити доле #lorem(100) са текстом задатка.
@@ -41,16 +38,16 @@
 ]
 
 // TODO: Датум одбране и чланове комисије добијате од ментора
-#let datum_odbrane = "01.01.2025"
-#let komisija_predsednik = "Петар Петровић"
+#let datum_odbrane = "00.00.0000" // TODO: уписати стварни датум одбране
+#let komisija_predsednik = "Петар Петровић" // TODO: уписати председника комисије
 #let komisija_predsednik_zvanje = "ванредни професор"
-#let komisija_clan = "Марко Марковић"
+#let komisija_clan = "Марко Марковић" // TODO: уписати члана комисије
 #let komisija_clan_zvanje = "доцент"
 
 // На енглеском уписати чланове на латиници
 #let komisija_predsednik_eng = "Petar Petrović"
 #let komisija_clan_eng = "Marko Marković"
-#let mentor_eng = "Igor Dejanović"
+#let mentor_eng = "Goran Sladić"
 
 
 // Ово даље углавном не треба мењати.
