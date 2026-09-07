@@ -17,27 +17,27 @@
   place(left + top,
       dy: 15.6%,
       dx: 18%,
-      rect(align(left + horizon, studijski_program), fill: clr, width: 81%, height: 3.7%)
+      rect(align(left + horizon, studijski_program), fill: clr, width: 81%, height: 2.8%)
   )
   place(left + top,
       dy: 20%,
       dx: 18%,
-      rect(align(left + horizon, autor), fill: clr, width: 43%, height: 2.47%)
+      rect(align(left + horizon, autor), fill: clr, width: 43%, height: 2.2%)
   )
   place(left + top,
       dy: 20%,
       dx: 78%,
-      rect(align(left + horizon, indeks), fill: clr, width: 21%, height: 2.47%)
+      rect(align(left + horizon, indeks), fill: clr, width: 21%, height: 2.2%)
   )
   place(left + top,
       dy: 22.8%,
       dx: 18%,
-      rect(align(left + horizon, stepen), fill: clr, width: 81%, height: 3.3%)
+      rect(align(left + horizon, stepen), fill: clr, width: 81%, height: 2.5%)
   )
   place(left + top,
       dy: 26.5%,
       dx: 18%,
-      rect(align(left + horizon, oblast), fill: clr, width: 81%, height: 2.47%)
+      rect(align(left + horizon, oblast), fill: clr, width: 81%, height: 1.8%)
   )
   place(left + top,
       dy: 29.5%,
@@ -50,6 +50,6 @@
   )
   place(center + top,
       dy: 57%,
-      rect(align(left + top, zadatak), fill: clr, width: 98%, height: 22%)
+      rect(align(left + top, zadatak), fill: clr, width: 98%, height: 15%)
   )
 })
