@@ -136,19 +136,19 @@
   place(left + top,
       dy: 88.95%,
       dx: left_edge_komisija,
-      rect(align(left + horizon, "Др " + komisija_predsednik + ", " + komisija_predsednik_zvanje),
+      rect(align(left + horizon, "Др " + komisija_predsednik + ", " + komisija_predsednik_zvanje +", ФТН Нови Сад"),
           fill: clr, width: 38%, height: 12pt)
   )
   place(left + top,
       dy: 91.25%,
       dx: left_edge_komisija,
-      rect(align(left + horizon, "Др " + komisija_clan + ", " + komisija_clan_zvanje),
+      rect(align(left + horizon, "Др " + komisija_clan + ", " + komisija_clan_zvanje +", ФТН Нови Сад"),
           fill: clr, width: 38%, height: 12pt)
   )
   place(left + top,
       dy: 95.91%,
       dx: left_edge_komisija,
-      rect(align(left + horizon, "Др " + mentor + ", " + mentor_zvanje),
+      rect(align(left + horizon, "Др " + mentor + ", " + mentor_zvanje +", ФТН Нови Сад"),
           fill: clr, width: 38%, height: 12pt)
   )
 
@@ -269,19 +269,19 @@
       dy: 88.7%,
       dx: left_edge_eng_komisija,
       rect(align(left + horizon, komisija_predsednik_eng
-      + ", Phd., " + komisija_predsednik_zvanje_eng),
+      + ", Phd., " + komisija_predsednik_zvanje_eng +", FTN Novi Sad"),
           fill: clr, width: 38%, height: 12pt)
   )
   place(left + top,
       dy: 91%,
       dx: left_edge_eng_komisija,
-      rect(align(left + horizon, komisija_clan_eng + ", Phd., " + komisija_clan_zvanje_eng),
+      rect(align(left + horizon, komisija_clan_eng + ", Phd., " + komisija_clan_zvanje_eng +", FTN Novi Sad"),
           fill: clr, width: 38%, height: 12pt)
   )
   place(left + top,
       dy: 95.65%,
       dx: left_edge_eng_komisija,
-      rect(align(left + horizon, mentor_eng + ", Phd., " + mentor_zvanje_eng),
+      rect(align(left + horizon, mentor_eng + ", Phd., " + mentor_zvanje_eng +", FTN Novi Sad"),
           fill: clr, width: 38%, height: 12pt)
   )
 })
